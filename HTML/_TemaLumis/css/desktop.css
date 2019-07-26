@@ -86,6 +86,7 @@
 
 .latest__list {
   max-height: 244px;
+  min-height: 217px;
   overflow: auto; }
 
 .latest__item {
