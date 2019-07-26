@@ -1131,7 +1131,7 @@ textarea {
 
 .search__form {
   position: relative;
-  width: 80%; }
+  width: 100%; }
 
 .site-search {
   max-width: 915px; }
