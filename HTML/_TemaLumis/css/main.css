@@ -1240,6 +1240,31 @@ textarea {
 .pager__total {
   line-height: 40px; }
 
+.pager .load-more {
+  display: flex;
+  justify-content: center;
+  height: 60px;
+}
+
+.btn-oi {
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  line-height: 1.5;
+  text-decoration: none;}
+  .btn-oi.btn-oi-outline {
+    border: 2px solid #d82482;
+    color: #d82482;
+    width: 390px;
+    line-height: 3.5;
+    border-radius: 5px;}
+    .btn-oi.btn-oi-outline:hover {
+      background: #d82482;
+      color: #fff;
+      transition: all .5s ease;}
+
 .gallery .site-search {
   margin-bottom: 40px; }
 
