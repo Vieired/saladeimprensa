@@ -1,0 +1,8 @@
+AJUSTES NO HTML:
+- Busca - largura do campo (colocar 100%)
+- Home - "Notícias em destaque" retirar scroll
+- Paginação - criar botão "ver mais" - Print "___01_SaladeImprensa_V2.jpg"
+- Ajustar função slider para ser chamada somente quando existir galeria de imagens
+
+
+
