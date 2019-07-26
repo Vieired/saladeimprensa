@@ -41,25 +41,26 @@ document.querySelector('.search-toggle').addEventListener('click', openSearch);
 document.querySelector('.form-close').addEventListener('click', closeSearch);
 
 // Carousel - Galeria de Imagens
+if(document.querySelector('.slider')) {
+  var slider = tns({
+    container: '.slider-content',
+    items: 1,
+    navAsThumbnails: true,
+    navContainer: '.nav-wrapper',
+    loop: false
+  });
+  document.querySelector('.total-slides').innerHTML = slider.getInfo().slideCount;
+  document.querySelector('.tns-controls').addEventListener('click', function() {
+    var currentSlide = slider.getInfo().index + 1;
+    document.querySelector('.current-slide').innerHTML = currentSlide;
+  });
+  var navWrapper = document.querySelector('.nav-wrapper');
+  var width = navWrapper.childElementCount * 91;
+  navWrapper.setAttribute('style', 'width: ' + width + 'px');
+}
 
-var slider = tns({
-  container: '.slider-content',
-  items: 1,
-  navAsThumbnails: true,
-  navContainer: '.nav-wrapper',
-  loop: false
-});
 
-document.querySelector('.total-slides').innerHTML = slider.getInfo().slideCount;
 
-var navWrapper = document.querySelector('.nav-wrapper')
-var width = navWrapper.childElementCount * 91
-navWrapper.setAttribute('style', 'width: ' + width + 'px')
-
-document.querySelector('.tns-controls').addEventListener('click', function() {
-  var currentSlide = slider.getInfo().index + 1;
-  document.querySelector('.current-slide').innerHTML = currentSlide;
-});
 
 // Share Widget
 
