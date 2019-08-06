@@ -1,8 +1,84 @@
 AJUSTES NO HTML:
+
 - Busca - largura do campo (colocar 100%)
+Solução: retirar a propriedade "width 80%" da classe .search__form no arquivo main.css
+
+.search__form {
+    position: relative;
+    /* width: 80%; */
+}
+
+
+
 - Home - "Notícias em destaque" retirar scroll
+Solução: na classe ".latest__list" do arquivo "desktop.css" adicionar a propriedade "min-height: 217px;"
+
+
+
 - Paginação - criar botão "ver mais" - Print "___01_SaladeImprensa_V2.jpg"
+Solução:
+(1)no arquivo "main.css" adicionar as seguintes propriedades CSS:
+.pager .load-more {
+  display: flex;
+  justify-content: center;
+  height: 60px;
+}
+
+.btn-oi {
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  line-height: 1.5;
+  text-decoration: none;}
+  .btn-oi.btn-oi-outline {
+    border: 2px solid #d82482;
+    color: #d82482;
+    width: 390px;
+    line-height: 3.5;
+    border-radius: 5px;}
+    .btn-oi.btn-oi-outline:hover {
+      background: #d82482;
+      color: #fff;
+      transition: all .5s ease;}
+
+(2)Substituir o HTML:
+<ul class="pager__list">
+          <li class="pager__item prev disabled"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M427 234.625H167.296l119.702-119.702L256 85 85 256l171 171 29.922-29.924-118.626-119.701H427v-42.75z"/></svg></a></li>
+          <li class="pager__item"><a class="current-page" href="#">1</a></li>
+          <li class="pager__item"><span class="pager__total">de 50</span></li>
+          <li class="pager__item next"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M85 277.375h259.704L225.002 397.077 256 427l171-171L256 85l-29.922 29.924 118.626 119.701H85v42.75z"/></svg></a></li>
+        </ul>
+
+Por:
+        <div class="load-more">
+          <a href="#" class="btn-oi btn-oi-outline">Carregar mais</a>
+        </div>
+
+
+
 - Ajustar função slider para ser chamada somente quando existir galeria de imagens
+No arquivo main.js, reposicionar os códigos dentro da condicional, conforme abaixo:
+// Carousel - Galeria de Imagens
+if(document.querySelector('.slider')) {
+  var slider = tns({
+    container: '.slider-content',
+    items: 1,
+    navAsThumbnails: true,
+    navContainer: '.nav-wrapper',
+    loop: false
+  });
+  document.querySelector('.total-slides').innerHTML = slider.getInfo().slideCount;
+  document.querySelector('.tns-controls').addEventListener('click', function() {
+    var currentSlide = slider.getInfo().index + 1;
+    document.querySelector('.current-slide').innerHTML = currentSlide;
+  });
+  var navWrapper = document.querySelector('.nav-wrapper');
+  var width = navWrapper.childElementCount * 91;
+  navWrapper.setAttribute('style', 'width: ' + width + 'px');
+}
+
 
 
 
