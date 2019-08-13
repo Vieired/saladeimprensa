@@ -1310,6 +1310,7 @@ textarea {
     .btn-oi.btn-oi-outline:hover {
       background: #d82482;
       color: #fff;
+      cursor: pointer;
       transition: all .5s ease;}
 
 .gallery .site-search {
